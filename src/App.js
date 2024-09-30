@@ -5,6 +5,7 @@ import {
   Route,
   NavLink,
 } from "react-router-dom";
+
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
@@ -16,22 +17,23 @@ function App() {
         <nav>
           <ul>
             <li>
-              <NavLink to="/ " exact className="active">
+              <NavLink to="/ " exact activeClassName="active">
                 Головна
               </NavLink>
             </li>
             <li>
-              <NavLink to="/about" className="active">
+              <NavLink to="/about" activeClassName="active">
                 Про нас
               </NavLink>
             </li>
             <li>
-              <NavLink to="/contact" className="active">
+              <NavLink to="/contact" activeClassName="active">
                 Контакти
               </NavLink>
             </li>
           </ul>
         </nav>
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
