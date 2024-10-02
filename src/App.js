@@ -9,6 +9,7 @@ import {
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
+import Contacts from "./contexts/Contacts";
 
 function App() {
   return (
@@ -37,7 +38,15 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
+
+          <Route
+            path="/contact"
+            element={
+              <Contacts>
+                <Contact />
+              </Contacts>
+            }
+          />
         </Routes>
       </Router>
     </div>
