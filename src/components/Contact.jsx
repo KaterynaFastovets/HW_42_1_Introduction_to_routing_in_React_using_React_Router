@@ -1,17 +1,18 @@
-import React from "react";
-import { useContext } from "react";
+import React, {} from "react";
+import { ContactsInfo } from "../App";
 
-import { ContactsContext } from "../contexts/Contacts";
+
+
 
 function Contact() {
-  const [contacts] = useContext(ContactsContext);
+  const contactsData = React.useContext (ContactsInfo);
   return (
-    <div >
+    <div className="child" >
       <h1>Це контактна сторінка</h1>
       <div className="contactInfo">
-        <p>{`Ел.адреса: ${contacts.mail}`}</p>
-        <p>{`Телефон: ${contacts.tel}`}</p>
-        <p>{`Адреса: ${contacts.address}`}</p>
+      <p>{`Ел.адреса: ${contactsData.mail}`}</p>
+        <p>{`Телефон: ${contactsData.tel}`}</p>
+        <p>{`Адреса: ${contactsData.address}`}</p>
       </div>
     </div>
   );

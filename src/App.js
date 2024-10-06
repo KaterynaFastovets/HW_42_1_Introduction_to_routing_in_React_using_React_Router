@@ -9,9 +9,16 @@ import {
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
-import Contacts from "./contexts/Contacts";
+import React, { useState } from "react";
+
+export const ContactsInfo = React.createContext({});
 
 function App() {
+  const [contacts] = useState({
+    mail: "dddddd@gmail.com",
+    tel: "(044)111-11-11",
+    address: "м. Київ, вулиця Олександра Кошиця, 5",
+  });
   return (
     <div className="div">
       <Router>
@@ -36,15 +43,30 @@ function App() {
         </nav>
 
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
+          <Route
+            path="/"
+            element={
+              <ContactsInfo.Provider value={contacts}>
+                <Home />
+                <About/>
+              </ContactsInfo.Provider>
+            }
+          />
+          <Route
+            path="/about"
+            element={
+              <ContactsInfo.Provider value={contacts}>
+                <About />
+              </ContactsInfo.Provider>
+            }
+          />
 
           <Route
             path="/contact"
             element={
-              <Contacts>
+              <ContactsInfo.Provider value={contacts}>
                 <Contact />
-              </Contacts>
+              </ContactsInfo.Provider>
             }
           />
         </Routes>

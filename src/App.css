@@ -56,3 +56,8 @@ a.active {
   text-align: left;
   color: #471f47;
 }
+.child, .div {
+  padding: 10px;
+  margin: 10px;
+  border: 2px solid red;
+}
